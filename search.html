@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn:hover {
+            background-color: lightgray;
+        }
+        body {
+            background: yellow; 
+        }
+        .navbar-custom {
+            font-size: larger; 
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="'button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="details.html">Details</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="search.html"  aria-expanded="false">Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col text-center mb-5">   
+            <h3 class="text-primary">Enter the name of a Pokemon to see their specs</h3>
+        </div>
+    </div>
+        </div class="row">
+            <div class="col-4 offset-4">
+                <form id ="pokeForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="pokeName" class="form-label text-left">Name</label>
+                        <input type="text" class="form-control" id="pokeName" placeholder="Please enter a name of a Pokemon">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-5">Here We Go!</button>
+                    </div>
+                </form>
+                <script>
+                    document.getElementById('pokeForm').addEventListener('submit', async function(event){
+                        event.preventDefault();
+                        const pokeName = document.getElementById('pokeName').value.toLowerCase().trim();
+                        if (!pokeName) return;
+
+                        try {
+                            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
+                            if (!response.ok) throw new Error('Pokemon not found');
+                            const pokemonData = await response.json();
+
+                            localStorage.setItem('pokemonData',JSON.stringify(pokemonData));
+
+                            window.location.href = 'details.html';
+                        } catch(error) {
+                            alert('Error fetching Pokemon data:' + error.message);
+                        }
+                    })
+                </script>
+            </div>
+        </div>    
+    </div> 
+</body>
+</html>

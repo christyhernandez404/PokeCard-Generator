@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Card</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn:hover {
+            background-color: lightgray;
+        }
+        .pokemon-card{
+            position: relative;
+            padding:20px;
+            border-radius:10px;
+            box-shadow: 2px;
+            max-width: 400px;
+            margin: 0 auto;
+            height:600px;
+        }
+
+        .base-experience {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-weight: bold;
+            font-size:16px;  
+              }
+        .hp-value{
+            position: absolute;
+            justify-content: right;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-weight:bold;
+            font-size: 20px;
+        }
+        .card-bg {
+            background-color: rgb(242, 241, 241);
+            border-radius: 10px;
+            border:solid 2px gold;
+            height: 600px;
+            background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+        }
+        body {
+            background: yellow; 
+        }
+        .navbar-custom {
+            font-size: larger; 
+
+        }
+       .stats-row{
+        display:flex;
+        justify-content:space-around;
+        margin: auto;
+        margin-top:90px;
+        border-radius: 5px;
+        padding-top: 20px;
+
+       }
+      
+
+        .abilities-list{
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding:0;
+            margin:auto;
+            margin-top:50px;
+            font-size: 30px;
+        }
+        .abilities-list li {
+            margin-bottom:5px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="'button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="details.html">Details</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="search.html"  aria-expanded="false">Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col mt-5">   
+            <h4 class="text-primary text-center">Pokemon Card</h4>
+            <div id="pokemon-info" class=" card-bg text-center mx-auto" style="max-width: 400px;"></div>
+        </div>
+    </div>
+    <script src="details.js"></script>
+</body>
+</html>

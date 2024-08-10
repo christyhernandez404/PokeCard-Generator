@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <style>
+        .carousel-item img {
+            height:400px;
+            object-fit: contain;
+            width:auto;
+            margin: 0 auto;
+        }
+
+        .card-img-top {
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+        }
+        body {
+            background: linear-gradient(to bottom right, yellow,blue, yellow, blue, yellow); 
+        }
+        .navbar-custom {
+            font-size: larger; 
+
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="'button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="details.html">Details</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active" href="search.html"  aria-expanded="false">Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="carousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/Pokemon-Logo-PNG4.png" class="d-block w-500" alt="pikachu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div id="pokemonCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/bulbasaur.webp" class="d-block w-100" alt="Bulbasaur">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bulbasaur</h5>
+                        <p>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+                    </div>
+                </div>
+               
+                <div class="carousel-item">
+                    <img src="/images/mewtwo.webp" class="d-block w-100" alt="Mewtwo">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Charmander</h5>
+                    <p>Charmander are small, bipedal lizard-like Pokémon native to Kanto. They have blue eyes, orange skin, three-toed clawed feet, yellow bellies, and a single yellow pad covering most of the soles of their feet.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/charmander.png" class="d-block w-100" alt="Charmander">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Mewtwo</h5>
+                    <p>Mewtwo was the strongest in the original games in terms of base statistic distribution. It is known as the "Genetic Pokémon" and is a Legendary Pokémon, a special group of Pokémon that are very rare and usually very powerful.</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#pokemonCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#pokemonCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
