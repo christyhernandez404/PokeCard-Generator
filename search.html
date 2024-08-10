@@ -31,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="details.html">Details</a>
+                        <a class="nav-link active" aria-current="page" href="pokecard.html">PokeCard</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link active" href="search.html"  aria-expanded="false">Search</a>
@@ -69,7 +69,7 @@
 
                             localStorage.setItem('pokemonData',JSON.stringify(pokemonData));
 
-                            window.location.href = 'details.html';
+                            window.location.href = 'pokecard.html';
                         } catch(error) {
                             alert('Error fetching Pokemon data:' + error.message);
                         }
