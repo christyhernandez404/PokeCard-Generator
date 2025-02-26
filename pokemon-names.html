@@ -3,45 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon Card</title>
+    <title>Pokémon Names</title>
+
     <link rel="stylesheet" href="bootstrap/bootstrap.css" />
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <style>
       .btn:hover {
         background-color: lightgray;
-      }
-      .pokemon-card {
-        position: relative;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 2px;
-        max-width: 400px;
-        margin: 0 auto;
-        height: 600px;
-      }
-
-      .base-experience {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .hp-value {
-        position: absolute;
-        justify-content: right;
-        top: 10px;
-        right: 10px;
-        padding: 5px 10px;
-        font-weight: bold;
-        font-size: 20px;
-      }
-      .card-bg {
-        background-color: rgb(242, 241, 241);
-        border-radius: 10px;
-        border: solid 2px gold;
-        height: 600px;
-        background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
       }
       body {
         background: yellow;
@@ -49,28 +17,21 @@
       .navbar-custom {
         font-size: larger;
       }
-      .stats-row {
-        display: flex;
-        justify-content: space-around;
-        margin: auto;
-        margin-top: 90px;
-        border-radius: 5px;
-        padding-top: 20px;
+
+      /* Custom Accordion Styles */
+      .accordion-button {
+        background-color: #0d6efd; /* Bootstrap's default blue color */
+        color: white; /* White text */
       }
 
-      .abilities-list {
-        display: flex;
-        justify-content: space-around;
-        list-style-type: none;
-        padding: 0;
-        margin: auto;
-        margin-top: 50px;
-        font-size: 30px;
+      .accordion-button:not(.collapsed) {
+        background-color: #0b5ed7; /* Slightly darker blue when expanded */
+        color: white; /* White text */
       }
-      .abilities-list li {
-        margin-bottom: 5px;
-        text-align: center;
-        font-size: 20px;
+
+      .accordion-body {
+        background-color: white; /* Keep the body background white */
+        color: black; /* Keep the text inside the body black */
       }
     </style>
   </head>
@@ -79,7 +40,7 @@
       <div class="container-fluid">
         <button
           class="navbar-toggler"
-          type="'button"
+          type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
         >
@@ -120,16 +81,11 @@
         </div>
       </div>
     </nav>
-    <div class="row">
-      <div class="col mt-5">
-        <h4 class="text-primary text-center">Pokemon Card</h4>
-        <div
-          id="pokemon-info"
-          class="card-bg text-center mx-auto"
-          style="max-width: 400px"
-        ></div>
-      </div>
+    <div class="container mt-5">
+      <h1 class="text-center">Pokémon Names</h1>
+      <div id="pokemon-accordion" class="accordion"></div>
     </div>
-    <script src="/js/pokecard.js"></script>
+
+    <script src="/js/pokemon-names.js"></script>
   </body>
 </html>
